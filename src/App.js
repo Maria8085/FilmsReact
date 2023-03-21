@@ -1,10 +1,15 @@
 import React from "react"
+import Context from "./components/context";
+import BoardCards from "./components/boardCards/boardCards";
 
 function App() {
   return (
-    <div className="wrapper">
-      <h1>React tutorial</h1>
-    </div>
+    <Context.Provider>
+      <div className="wrapper">
+        <h2 className="title">Популярные фильмы</h2>
+        <BoardCards/>
+      </div>
+    </Context.Provider>
   );
 }
 
