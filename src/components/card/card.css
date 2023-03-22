@@ -4,6 +4,13 @@
     border-radius: 10px;
     width: 190px;
     padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover .favoriteCard{
+    opacity: 1;
 }
 
 .imageCard{
@@ -26,4 +33,27 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
+}
+
+.favoriteCard{
+    width: 48px;
+    height: 48px;
+    align-self: flex-end;
+    border: none;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.2s ease-out;
+}
+
+.favoriteCard:hover{
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.favoriteCard:active{
+    background: rgba(0, 0, 0, 0.1);
 }

@@ -1,15 +1,15 @@
-import React from "react"
+import React, { useContext } from "react"
 import Context from "./components/context";
 import BoardCards from "./components/boardCards/boardCards";
+import Filters from "./components/filters/filters";
 
 function App() {
+  const films = useContext(Context);
   return (
-    <Context.Provider>
       <div className="wrapper">
-        <h2 className="title">Популярные фильмы</h2>
-        <BoardCards/>
+        <BoardCards title="Популярные фильмы" films={films} Filters={Filters} />
+        <BoardCards title="Самый лучший фильм" films={[films[1]]}/>
       </div>
-    </Context.Provider>
   );
 }
 

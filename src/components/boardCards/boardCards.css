@@ -1,6 +1,7 @@
 .boardCards{
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     gap:10px;
     flex-wrap:wrap;
+    margin-bottom: 10px;
 }
