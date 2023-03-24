@@ -9,7 +9,7 @@ function BoardCards({title, films, Filters}) {
             <h2 className="title">{title}</h2>
             {Filters? <Filters />: null}
             <div className="boardCards">
-                {films.map((film) => <Card key={film.id} id={film.id} name={film.name} year={film.year} genre={ film.genre} />)}
+                {films.map((film) => <Card key={film.id} id={film.id} name={film.name} year={film.year} genre={film.genre} />)}
             </div>
         </>
     )

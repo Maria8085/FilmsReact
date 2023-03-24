@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import './card.css';
 import { genreDict } from "../../constant";
 import { FavoriteBorder,Favorite} from '@material-ui/icons';
+import Context from "../context";
 
-function Card({ id, name, year, genre, favorite=false}) { 
+function Card({ id, name, year, genre }) {
+    const {store,toggleFilm} = useContext(Context)
     return (
         <div className="card">
             <div>
@@ -12,8 +14,8 @@ function Card({ id, name, year, genre, favorite=false}) {
                 <p className="contentCard">{genre.map((genreId) => (genreDict[genreId])).join(", ")}</p>
                 <p className="contentCard">{year}</p>
             </div>
-            <button className="favoriteCard">
-                {favorite? <Favorite /> :<FavoriteBorder />}
+            <button className="favoriteCard" onClick={() => toggleFilm(id)}>
+                {store.favorite === id? <Favorite /> :<FavoriteBorder />}
             </button>
         </div>
     );
