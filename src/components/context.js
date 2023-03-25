@@ -1,11 +1,15 @@
 import React from "react";
-import Data from "./data.json"
+import Data from "./data.json";
 
 export let filmStore = {
-    films: Data,
-    favorite: false,
-}
+	films: Data,
+	favorite: localStorage.getItem("favorite") || false,
+	filters: {
+		genre: false,
+		name: "",
+	},
+};
 
-let Context = React.createContext(filmStore)
+let Context = React.createContext(filmStore);
 
-export default Context
+export default Context;
